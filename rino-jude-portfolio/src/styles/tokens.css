@@ -1,0 +1,32 @@
+:root {
+  --paper: #f6f3ea;
+  --paper-elevated: #fbf9f3;
+  --ink: #1f1e1a;
+  --ink-soft: #4e4b44;
+  --graphite: #858078;
+  --graphite-faint: #d8d2c6;
+  --line: #2b2924;
+  --focus: #1f1e1a;
+  --fs-hero: clamp(3.2rem, 8vw, 7.5rem);
+  --fs-h2: clamp(2rem, 4vw, 4rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.8rem);
+  --fs-body: clamp(1rem, 1.1vw, 1.125rem);
+  --fs-small: 0.84rem;
+  --fs-mono: 0.72rem;
+  --fs-note: 1.05rem;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-note: "Caveat", cursive;
+  --max-width: 1200px;
+  --pad-x: 5vw;
+  --section-y: clamp(5rem, 10vw, 12rem);
+  --line-weight: 1.5px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --pad-x: 6vw;
+    --section-y: clamp(4.5rem, 14vw, 8rem);
+  }
+}

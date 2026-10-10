@@ -1,0 +1,199 @@
+/* ---------- Projects: shuffled card deck ---------- */
+.deck {
+  position: relative;
+  width: min(100%, 40rem);
+  margin-inline: auto;
+}
+
+.deck-stage-wrap {
+  padding: 1.6rem 1.8rem 2.2rem;
+  margin: -1.6rem -1.8rem 0;
+}
+
+/* On narrower screens the sliding card must not widen the page. */
+@media (max-width: 999px) {
+  .deck-stage-wrap {
+    overflow-x: clip;
+  }
+}
+
+.deck-stage {
+  position: relative;
+  height: clamp(25rem, 36vw, 27rem);
+}
+
+.deck-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.6rem 1.3rem;
+  background: var(--paper-elevated);
+  border: 1.5px solid var(--line);
+  border-radius: 3px 6px 4px 7px;
+  box-shadow: 3px 4px 0 rgba(31, 30, 26, 0.1);
+  color: var(--ink);
+  transform-origin: 50% 60%;
+  will-change: transform;
+  user-select: none;
+}
+
+.deck-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px 8px 9px 6px;
+  border: 1px solid var(--graphite-faint);
+  border-radius: 2px 4px 3px 5px;
+  pointer-events: none;
+}
+
+.deck-card.is-top {
+  box-shadow: 4px 6px 0 rgba(31, 30, 26, 0.13);
+}
+
+.deck-card.is-top:hover::before {
+  border-color: var(--graphite);
+}
+
+.deck-card-head {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.deck-num {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
+.deck-eyebrow {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deck-status {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  padding: 0.15rem 0.4rem;
+  white-space: nowrap;
+}
+
+/* Title + summary fill the space the media used to take. */
+.deck-body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 0.6rem 0;
+}
+
+.deck-title {
+  font-size: clamp(1.75rem, 3.1vw, 2.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.deck-summary {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.deck-tags {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+  overflow: hidden;
+}
+
+.deck-tags .skill-tag {
+  white-space: nowrap;
+  padding: 0.25rem 0.45rem;
+}
+
+.deck-more {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--graphite);
+  white-space: nowrap;
+}
+
+.deck-foot {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--graphite-faint);
+}
+
+.deck-foot .metric {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deck-view {
+  white-space: nowrap;
+}
+
+.deck-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.4rem;
+}
+
+.deck-hint {
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.deck-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .deck-stage {
+    height: 28rem;
+  }
+
+  .deck-stage-wrap {
+    padding: 1.2rem 1rem 2rem;
+    margin: -1.2rem -1rem 0;
+  }
+
+  .deck-title {
+    font-size: clamp(1.55rem, 7vw, 1.9rem);
+  }
+}
